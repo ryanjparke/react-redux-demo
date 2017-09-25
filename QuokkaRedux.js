@@ -23,7 +23,7 @@ let array = [1, 5, 2, 6, 4]
 let objects = [{
     name: "Joe",
     age: 7,
-    color: 'blue'
+
 },
 {
     cereal: 'frosted cocoa flake puff crunch'
@@ -36,6 +36,14 @@ let objects = [{
 }, {
     age: 9
 }]
+
+{
+    name: "Joseph",
+    age: 9,
+    color: "blue",
+    cereal: 'frosted cocoa flake puff crunch'
+
+}
 
 let allObjectsCombined = objects.reduce((currentMash, nextObject) => {
     currentMash;
@@ -67,7 +75,7 @@ function reducer(state, action) {
     action;
     switch (action.type) {
         case "update_age":
-            return Object.assign({}, state, { age: action.age })
+            return Object.assign({}, state, { age: action.age }) //always the same!!
     }
 }
 let state1 = reducer(allObjectsCombined, action)
@@ -81,7 +89,7 @@ state1;
 
 // We're going to send these actions from lots of places, 
 // so building that object, over and over again, could get redundant and is error prone to typos.
-// To help with this we wrap it in a function called an action builder
+// To help with this we wrap it in a function called an "action builder"
 
 
 function updateAge(age) {
@@ -90,6 +98,7 @@ function updateAge(age) {
         age: age
     }
 }
+// ^^ this is only written one time and can be used unlimited amount of times. Avoid typos. Typoholics anonymous.
 
 
 function reducer2(state, action) {
@@ -109,6 +118,7 @@ state2;
 
 //Try it
 // 1. Change Joey's age to 13
+
 // 2. Create an action builder for update cereal and use it to update your state
 
 

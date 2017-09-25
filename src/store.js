@@ -20,5 +20,7 @@ export default store; //The store is used in index.js by the react-redux top lev
 // export default store; //The store is used in index.js by the react-redux top level provider
 
 
+//SEE REDUCER.JS FILE AFTER THIS ^^
+
 
 

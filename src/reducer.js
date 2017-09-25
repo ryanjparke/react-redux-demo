@@ -2,12 +2,12 @@
 //We put all action builders and the reducer function in here.
 //We can make as many reducers as we want, in as many files as we want to split up our code in easier to understand chunks.
 
-//CONSTANTS
+//CONSTANTS - something I am not going to ever change
 const UPDATE_NAME = "UPDATE_NAME";
 const ADD_PERSON = "ADD_PERSON"
 const GET_PEOPLE = "GET_PEOPLE"
 
-//ACTION BUILDERS
+//ACTION BUILDERS - 
 export function updateName(name) {
     return {
         type: UPDATE_NAME,
@@ -34,6 +34,7 @@ export function getPeople() {
     }
 }
 
+// This is defining blueprint of what you will keep track of for reducer (more clear)
 let initialState = {
     people: [{
         name: "Sleepy",
@@ -41,7 +42,7 @@ let initialState = {
     }]
 }
 //REDUCER
-export default function (state = initialState, action) {
+export default function (state = initialState, action) { // basically saying it cannot be null and will return default value of initialState above. Avoids breakage.
     switch (action.type) {
         case UPDATE_NAME:
             return Object.assign({}, state, { name: action.name })
